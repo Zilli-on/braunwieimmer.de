@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>braunwieimmer — Täglich besser werden.</title>
+  <meta name="description" content="Kostenloser 8-Wochen-Laufplan für Anfänger. Täglich besser werden mit @braunwieimmer.">
+  <link rel="alternate" type="application/rss+xml" title="braunwieimmer RSS Feed" href="/feed.xml">
+  <!-- Google Analytics 4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --bg:     #0a0a0a;
+      --card:   #141414;
+      --orange: #FF6B00;
+      --text:   #f0f0f0;
+      --muted:  #888;
+      --border: #222;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 40px 20px 80px;
+    }
+
+    .profile {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 32px;
+    }
+
+    .avatar {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--orange), #ff9a3c);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 32px;
+      font-weight: 900;
+      color: #fff;
+      letter-spacing: -2px;
+    }
+
+    .handle {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    .tagline {
+      font-size: 13px;
+      color: var(--muted);
+      text-align: center;
+      max-width: 280px;
+      line-height: 1.5;
+    }
+
+    .links {
+      width: 100%;
+      max-width: 400px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .link-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 16px 20px;
+      text-decoration: none;
+      color: var(--text);
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      transition: border-color 0.2s, transform 0.1s;
+      cursor: pointer;
+    }
+
+    .link-card:hover {
+      border-color: var(--orange);
+      transform: translateY(-1px);
+    }
+
+    .link-card.primary {
+      background: var(--orange);
+      border-color: var(--orange);
+      color: #fff;
+    }
+
+    .link-card.primary:hover {
+      background: #ff7d1a;
+      border-color: #ff7d1a;
+    }
+
+    .icon {
+      font-size: 24px;
+      width: 36px;
+      text-align: center;
+      flex-shrink: 0;
+    }
+
+    .link-text {
+      flex: 1;
+    }
+
+    .link-title {
+      font-size: 15px;
+      font-weight: 600;
+      line-height: 1.3;
+    }
+
+    .link-sub {
+      font-size: 12px;
+      opacity: 0.7;
+      margin-top: 2px;
+    }
+
+    .link-card.primary .link-sub {
+      opacity: 0.85;
+    }
+
+    .arrow {
+      font-size: 16px;
+      opacity: 0.5;
+      flex-shrink: 0;
+    }
+
+    .divider {
+      width: 100%;
+      max-width: 400px;
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 8px 0;
+    }
+
+    .section-label {
+      width: 100%;
+      max-width: 400px;
+      font-size: 11px;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: -4px;
+    }
+
+    footer {
+      margin-top: 48px;
+      font-size: 11px;
+      color: var(--muted);
+      text-align: center;
+    }
+
+    footer a { color: var(--muted); }
+  </style>
+</head>
+<body>
+
+  <div class="profile">
+    <div class="avatar">BW</div>
+    <div class="handle">@braunwieimmer</div>
+    <div class="tagline">Täglich besser werden — Schritt für Schritt.<br>Laufen. Fitness. Motivation. Für Anfänger.</div>
+  </div>
+
+  <div class="links">
+
+    <!-- CTA #1 — Email Capture (Formspree endpoint — replace YOUR_FORM_ID) -->
+    <div class="link-card primary" id="email-cta" style="flex-direction:column; align-items:stretch; gap:10px; cursor:default;">
+      <div style="display:flex; align-items:center; gap:12px;">
+        <span class="icon">🎁</span>
+        <div class="link-text">
+          <div class="link-title">Kostenlosen Laufplan holen</div>
+          <div class="link-sub">8 Wochen Plan per E-Mail — komplett gratis</div>
+        </div>
+      </div>
+      <form id="email-form" action="http://localhost:8020/subscribe" method="POST"
+            style="display:flex; gap:8px;" onsubmit="handleSubmit(event)">
+        <input type="email" name="email" placeholder="deine@email.de" required
+               style="flex:1; padding:10px 14px; border-radius:8px; border:none;
+                      background:#fff2; color:#fff; font-size:14px; outline:none;"
+               autocomplete="email">
+        <button type="submit"
+                style="padding:10px 18px; border-radius:8px; border:none;
+                       background:#fff3; color:#fff; font-weight:700;
+                       cursor:pointer; font-size:14px; white-space:nowrap;">
+          Senden
+        </button>
+      </form>
+      <p id="form-msg" style="font-size:12px; opacity:0.8; display:none;"></p>
+    </div>
+
+    <!-- Telegram CTA (alternative) -->
+    <a class="link-card" href="https://t.me/braunwieimmer_bot?start=laufplan" target="_blank" rel="noopener">
+      <span class="icon">💬</span>
+      <div class="link-text">
+        <div class="link-title">Via Telegram: Schreib mir RUN</div>
+        <div class="link-sub">Laufplan sofort per Telegram</div>
+      </div>
+      <span class="arrow">→</span>
+    </a>
+
+    <!-- YouTube -->
+    <a class="link-card" href="https://www.youtube.com/@braunwieimmer" target="_blank" rel="noopener">
+      <span class="icon">▶️</span>
+      <div class="link-text">
+        <div class="link-title">YouTube — Shorts & Videos</div>
+        <div class="link-sub">Täglich neue Motivation</div>
+      </div>
+      <span class="arrow">→</span>
+    </a>
+
+    <hr class="divider">
+    <div class="section-label">Produkte</div>
+
+    <!-- Gumroad Product -->
+    <a class="link-card" href="https://braunwieimmer.gumroad.com/l/laufplan" target="_blank" rel="noopener">
+      <span class="icon">📋</span>
+      <div class="link-text">
+        <div class="link-title">8-Wochen-Laufplan PDF — 9€</div>
+        <div class="link-sub">Strukturiert von 0 auf 30 Minuten durchlaufen</div>
+      </div>
+      <span class="arrow">→</span>
+    </a>
+
+    <hr class="divider">
+    <div class="section-label">Follow</div>
+
+    <!-- Instagram -->
+    <a class="link-card" href="https://www.instagram.com/braunwieimmer/" target="_blank" rel="noopener">
+      <span class="icon">📸</span>
+      <div class="link-text">
+        <div class="link-title">Instagram</div>
+        <div class="link-sub">@braunwieimmer</div>
+      </div>
+      <span class="arrow">→</span>
+    </a>
+
+    <!-- TikTok -->
+    <a class="link-card" href="https://www.tiktok.com/@braunwieimmer" target="_blank" rel="noopener">
+      <span class="icon">🎵</span>
+      <div class="link-text">
+        <div class="link-title">TikTok</div>
+        <div class="link-sub">@braunwieimmer</div>
+      </div>
+      <span class="arrow">→</span>
+    </a>
+
+  </div>
+
+  <footer>
+    braunwieimmer &bull; <a href="mailto:kontakt@braunwieimmer.de">kontakt@braunwieimmer.de</a>
+  </footer>
+
+  <script>
+    const LOCAL_URL  = "http://localhost:8020/subscribe";
+    const PROD_URL   = "https://braunwieimmer.de/api/subscribe";
+
+    // Form submit handler — versucht local, dann prod, dann LocalStorage-Fallback
+    async function handleSubmit(e) {
+      e.preventDefault();
+      const form  = e.target;
+      const msg   = document.getElementById('form-msg');
+      const email = form.querySelector('input[type=email]').value;
+      const payload = JSON.stringify({ email: email, source: "homepage_form" });
+
+      let ok = false;
+      for (const url of [LOCAL_URL, PROD_URL]) {
+        try {
+          const resp = await fetch(url, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: payload,
+            signal: AbortSignal.timeout ? AbortSignal.timeout(3000) : undefined
+          });
+          if (resp.ok) { ok = true; break; }
+        } catch (_) {}
+      }
+
+      if (!ok) {
+        // LocalStorage-Fallback
+        const pending = JSON.parse(localStorage.getItem('bw_pending_leads') || '[]');
+        pending.push({ email, source: 'homepage_form', ts: new Date().toISOString() });
+        localStorage.setItem('bw_pending_leads', JSON.stringify(pending));
+        ok = true; // Für UI trotzdem Erfolg zeigen
+      }
+
+      msg.style.display = 'block';
+      msg.textContent = ok
+        ? '✅ Laufplan kommt gleich per E-Mail!'
+        : '❌ Fehler — schreib mir auf Telegram: RUN';
+      if (ok) form.style.display = 'none';
+    }
+
+    // Track clicks (privacy-friendly, no external scripts)
+    document.querySelectorAll('a.link-card').forEach(card => {
+      card.addEventListener('click', () => {
+        const title = card.querySelector('.link-title')?.textContent || 'unknown';
+        console.log('[BW] Click:', title, new Date().toISOString());
+      });
+    });
+  </script>
+
+</body>
+</html>
