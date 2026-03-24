@@ -1,0 +1,40 @@
+[build]
+  publish = "."
+  functions = "netlify/functions"
+
+[[redirects]]
+  from = "/api/subscribe"
+  to   = "/.netlify/functions/subscribe"
+  status = 200
+
+[[redirects]]
+  from = "/blog/:slug"
+  to   = "/blog/:slug.html"
+  status = 200
+
+[[redirects]]
+  from = "/laufplan"
+  to   = "/laufplan.html"
+  status = 200
+
+[[redirects]]
+  from = "/impressum"
+  to   = "/impressum.html"
+  status = 200
+
+[[redirects]]
+  from = "/datenschutz"
+  to   = "/datenschutz.html"
+  status = 200
+
+[[headers]]
+  for = "*.html"
+  [headers.values]
+    Cache-Control = "public, max-age=3600"
+    X-Frame-Options = "SAMEORIGIN"
+    X-Content-Type-Options = "nosniff"
+
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=86400"
