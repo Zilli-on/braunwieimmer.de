@@ -7,8 +7,8 @@
  * Env vars: TELEGRAM_BOT_TOKEN, TELEGRAM_CHAT_ID
  */
 
-const TELEGRAM_TOKEN = process.env.TELEGRAM_BOT_TOKEN || "";
-const TELEGRAM_CHAT  = process.env.TELEGRAM_CHAT_ID   || "1826325177";
+const TELEGRAM_TOKEN = process.env.TELEGRAM_BOT_TOKEN || process.env.JARVIS_TELEGRAM_BOT || "";
+const TELEGRAM_CHAT  = process.env.TELEGRAM_CHAT_ID   || process.env.JARVIS_TELEGRAM_CHAT || "1826325177";
 
 function validateEmail(email) {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test((email || "").trim());
