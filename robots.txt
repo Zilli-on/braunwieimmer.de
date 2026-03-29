@@ -3,3 +3,6 @@ Allow: /
 Disallow: /api/
 
 Sitemap: https://braunwieimmer.de/sitemap.xml
+
+# IndexNow key verification
+# https://braunwieimmer.de/a8f3c71e2d4b96057e1a3f82c6d40b95.txt
