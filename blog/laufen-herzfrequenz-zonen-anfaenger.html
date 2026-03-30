@@ -206,7 +206,28 @@
 </section>
 <script>(function(){{var P="https://braunwieimmer.de/api/subscribe";function bwSubmitLead(e){{e.preventDefault();var f=e.target,m=document.getElementById("bw-lead-msg"),em=f.querySelector("input[type=email]").value.trim().toLowerCase(),src=window.location.pathname.replace("/blog/","").replace(/\.html$/,"")||"blog";m.textContent="";fetch(P,{{method:"POST",headers:{{"Content-Type":"application/json"}},body:JSON.stringify({{email:em,source:src}})}}).then(function(r){{if(r.ok){{m.textContent="Super! Schau gleich in dein Postfach.";f.reset();}}else{{throw new Error();}} }}).catch(function(){{try{{var p=JSON.parse(localStorage.getItem("bw_pending_leads")||"[]");p.push({{email:em,source:src,ts:new Date().toISOString()}});localStorage.setItem("bw_pending_leads",JSON.stringify(p));}}catch(_){{}}m.textContent="Danke! Plan wird bald verschickt.";f.reset();}});}}window.bwSubmitLead=bwSubmitLead;}})();</script>
 <!-- /BW Email Lead Capture -->
-  </main>
+  
+<div class="faq-section" style="max-width:800px;margin:40px auto;padding:0 20px">
+  <h2 style="color:#ff8c00;margin-bottom:20px">Häufige Fragen</h2>
+  <details style="margin-bottom:16px;border:1px solid #2a2a2a;border-radius:8px;padding:16px 20px;background:#1a1a1a">
+    <summary style="cursor:pointer;font-weight:bold;color:#fff;font-size:1.05em">Welche Herzfrequenz-Zone ist für Anfänger am besten?</summary>
+    <p style="color:#ccc;margin-top:12px;line-height:1.6">Zone 2 (60-70% der maximalen HF) — du kannst dabei noch reden. Das ist die effektivste Zone für Grundlagenausdauer und Fettverbrennung.</p>
+  </details>
+  <details style="margin-bottom:16px;border:1px solid #2a2a2a;border-radius:8px;padding:16px 20px;background:#1a1a1a">
+    <summary style="cursor:pointer;font-weight:bold;color:#fff;font-size:1.05em">Wie berechne ich meine maximale Herzfrequenz?</summary>
+    <p style="color:#ccc;margin-top:12px;line-height:1.6">Faustformel: 220 minus Lebensalter. Bei 35 Jahren wäre das 185 Schläge/Min. Zone 2 wäre dann 111-130 bpm.</p>
+  </details>
+  <details style="margin-bottom:16px;border:1px solid #2a2a2a;border-radius:8px;padding:16px 20px;background:#1a1a1a">
+    <summary style="cursor:pointer;font-weight:bold;color:#fff;font-size:1.05em">Was bedeutet es wenn meine Herzfrequenz zu hoch ist?</summary>
+    <p style="color:#ccc;margin-top:12px;line-height:1.6">Über 85% der max. HF = zu intensiv für Grundlagentraining. Tempo reduzieren oder auf Gehen wechseln — kein Schwäche-Zeichen!</p>
+  </details>
+  <details style="margin-bottom:16px;border:1px solid #2a2a2a;border-radius:8px;padding:16px 20px;background:#1a1a1a">
+    <summary style="cursor:pointer;font-weight:bold;color:#fff;font-size:1.05em">Brauche ich eine Laufuhr um Herzfrequenz-Zonen zu nutzen?</summary>
+    <p style="color:#ccc;margin-top:12px;line-height:1.6">Nicht unbedingt — der 'Talk Test' reicht: wenn du beim Laufen noch Sätze sprechen kannst, bist du in Zone 2. Eine Uhr macht es präziser aber nicht notwendig.</p>
+  </details>
+</div>
+
+</main>
   <footer>
     <p>&copy; 2026 braunwieimmer &middot; <a href="/impressum">Impressum</a> &middot; <a href="/datenschutz">Datenschutz</a></p>
   </footer>

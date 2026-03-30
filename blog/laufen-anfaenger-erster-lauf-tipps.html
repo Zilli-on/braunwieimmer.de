@@ -202,7 +202,28 @@
 </section>
 <script>(function(){{var P="https://braunwieimmer.de/api/subscribe";function bwSubmitLead(e){{e.preventDefault();var f=e.target,m=document.getElementById("bw-lead-msg"),em=f.querySelector("input[type=email]").value.trim().toLowerCase(),src=window.location.pathname.replace("/blog/","").replace(/\.html$/,"")||"blog";m.textContent="";fetch(P,{{method:"POST",headers:{{"Content-Type":"application/json"}},body:JSON.stringify({{email:em,source:src}})}}).then(function(r){{if(r.ok){{m.textContent="Super! Schau gleich in dein Postfach.";f.reset();}}else{{throw new Error();}} }}).catch(function(){{try{{var p=JSON.parse(localStorage.getItem("bw_pending_leads")||"[]");p.push({{email:em,source:src,ts:new Date().toISOString()}});localStorage.setItem("bw_pending_leads",JSON.stringify(p));}}catch(_){{}}m.textContent="Danke! Plan wird bald verschickt.";f.reset();}});}}window.bwSubmitLead=bwSubmitLead;}})();</script>
 <!-- /BW Email Lead Capture -->
-  </main>
+  
+<div class="faq-section" style="max-width:800px;margin:40px auto;padding:0 20px">
+  <h2 style="color:#ff8c00;margin-bottom:20px">Häufige Fragen</h2>
+  <details style="margin-bottom:16px;border:1px solid #2a2a2a;border-radius:8px;padding:16px 20px;background:#1a1a1a">
+    <summary style="cursor:pointer;font-weight:bold;color:#fff;font-size:1.05em">Wie lange sollte der erste Lauf als Anfänger dauern?</summary>
+    <p style="color:#ccc;margin-top:12px;line-height:1.6">15-20 Minuten reichen völlig. Wechsel zwischen Laufen und Gehen ist perfekt. Zum Beispiel: 1 Min laufen, 2 Min gehen, 8x wiederholen.</p>
+  </details>
+  <details style="margin-bottom:16px;border:1px solid #2a2a2a;border-radius:8px;padding:16px 20px;background:#1a1a1a">
+    <summary style="cursor:pointer;font-weight:bold;color:#fff;font-size:1.05em">Was anziehen beim ersten Lauf?</summary>
+    <p style="color:#ccc;margin-top:12px;line-height:1.6">Funktionsbekleidung (kein Baumwoll-T-Shirt), gute Laufsocken, und vor allem: passende Laufschuhe. Alles andere ist sekundär.</p>
+  </details>
+  <details style="margin-bottom:16px;border:1px solid #2a2a2a;border-radius:8px;padding:16px 20px;background:#1a1a1a">
+    <summary style="cursor:pointer;font-weight:bold;color:#fff;font-size:1.05em">Ist es normal dass der erste Lauf so schwer ist?</summary>
+    <p style="color:#ccc;margin-top:12px;line-height:1.6">Absolut normal. Der Körper braucht 4-6 Wochen um sich ans Laufen zu gewöhnen. Danach wird es deutlich leichter — versprochen.</p>
+  </details>
+  <details style="margin-bottom:16px;border:1px solid #2a2a2a;border-radius:8px;padding:16px 20px;background:#1a1a1a">
+    <summary style="cursor:pointer;font-weight:bold;color:#fff;font-size:1.05em">Was sollte man nach dem ersten Lauf essen?</summary>
+    <p style="color:#ccc;margin-top:12px;line-height:1.6">Innerhalb von 30-60 Minuten: Kombination aus Protein und Kohlenhydraten. Zum Beispiel: Banane + Quark oder Brot mit Hüttenkäse.</p>
+  </details>
+</div>
+
+</main>
   <footer>
     <p>&copy; 2026 braunwieimmer &middot; <a href="/impressum">Impressum</a> &middot; <a href="/datenschutz">Datenschutz</a></p>
   </footer>

@@ -208,7 +208,28 @@
 </section>
 <script>(function(){{var P="https://braunwieimmer.de/api/subscribe";function bwSubmitLead(e){{e.preventDefault();var f=e.target,m=document.getElementById("bw-lead-msg"),em=f.querySelector("input[type=email]").value.trim().toLowerCase(),src=window.location.pathname.replace("/blog/","").replace(/\.html$/,"")||"blog";m.textContent="";fetch(P,{{method:"POST",headers:{{"Content-Type":"application/json"}},body:JSON.stringify({{email:em,source:src}})}}).then(function(r){{if(r.ok){{m.textContent="Super! Schau gleich in dein Postfach.";f.reset();}}else{{throw new Error();}} }}).catch(function(){{try{{var p=JSON.parse(localStorage.getItem("bw_pending_leads")||"[]");p.push({{email:em,source:src,ts:new Date().toISOString()}});localStorage.setItem("bw_pending_leads",JSON.stringify(p));}}catch(_){{}}m.textContent="Danke! Plan wird bald verschickt.";f.reset();}});}}window.bwSubmitLead=bwSubmitLead;}})();</script>
 <!-- /BW Email Lead Capture -->
-  </main>
+  
+<div class="faq-section" style="max-width:800px;margin:40px auto;padding:0 20px">
+  <h2 style="color:#ff8c00;margin-bottom:20px">Häufige Fragen</h2>
+  <details style="margin-bottom:16px;border:1px solid #2a2a2a;border-radius:8px;padding:16px 20px;background:#1a1a1a">
+    <summary style="cursor:pointer;font-weight:bold;color:#fff;font-size:1.05em">Kann man mit 10.000 Schritten täglich abnehmen?</summary>
+    <p style="color:#ccc;margin-top:12px;line-height:1.6">Ja, wenn man vorher weniger aktiv war. 10.000 Schritte verbrennen ca. 300-500 kcal extra — genug für langsamen Gewichtsverlust.</p>
+  </details>
+  <details style="margin-bottom:16px;border:1px solid #2a2a2a;border-radius:8px;padding:16px 20px;background:#1a1a1a">
+    <summary style="cursor:pointer;font-weight:bold;color:#fff;font-size:1.05em">Wie viele Schritte sind realistisch für einen Büromenschen?</summary>
+    <p style="color:#ccc;margin-top:12px;line-height:1.6">Die meisten Büroangestellten machen 3.000-6.000 Schritte täglich. 10.000 Schritte bedeuten ca. 8 km Gehstrecke — machbar mit Mittagspause + Abendspaziergang.</p>
+  </details>
+  <details style="margin-bottom:16px;border:1px solid #2a2a2a;border-radius:8px;padding:16px 20px;background:#1a1a1a">
+    <summary style="cursor:pointer;font-weight:bold;color:#fff;font-size:1.05em">Ist Laufen besser als 10.000 Schritte?</summary>
+    <p style="color:#ccc;margin-top:12px;line-height:1.6">Laufen verbrennt deutlich mehr Kalorien in weniger Zeit. 30 Minuten joggen ≈ 300-400 kcal vs. 10.000 Schritte ≈ 300-500 kcal in 80-100 Minuten.</p>
+  </details>
+  <details style="margin-bottom:16px;border:1px solid #2a2a2a;border-radius:8px;padding:16px 20px;background:#1a1a1a">
+    <summary style="cursor:pointer;font-weight:bold;color:#fff;font-size:1.05em">Zählt die Apple Watch oder Fitbit 10.000 Schritte genau?</summary>
+    <p style="color:#ccc;margin-top:12px;line-height:1.6">Ungefähr — Schrittzähler haben ca. 5-10% Fehlerquote. Als Motivations-Tool sind sie aber sehr effektiv, Genauigkeit ist sekundär.</p>
+  </details>
+</div>
+
+</main>
   <footer>
     <p>&copy; 2026 braunwieimmer &middot; <a href="/impressum">Impressum</a> &middot; <a href="/datenschutz">Datenschutz</a></p>
   </footer>

@@ -196,7 +196,28 @@
 </section>
 <script>(function(){{var P="https://braunwieimmer.de/api/subscribe";function bwSubmitLead(e){{e.preventDefault();var f=e.target,m=document.getElementById("bw-lead-msg"),em=f.querySelector("input[type=email]").value.trim().toLowerCase(),src=window.location.pathname.replace("/blog/","").replace(/\.html$/,"")||"blog";m.textContent="";fetch(P,{{method:"POST",headers:{{"Content-Type":"application/json"}},body:JSON.stringify({{email:em,source:src}})}}).then(function(r){{if(r.ok){{m.textContent="Super! Schau gleich in dein Postfach.";f.reset();}}else{{throw new Error();}} }}).catch(function(){{try{{var p=JSON.parse(localStorage.getItem("bw_pending_leads")||"[]");p.push({{email:em,source:src,ts:new Date().toISOString()}});localStorage.setItem("bw_pending_leads",JSON.stringify(p));}}catch(_){{}}m.textContent="Danke! Plan wird bald verschickt.";f.reset();}});}}window.bwSubmitLead=bwSubmitLead;}})();</script>
 <!-- /BW Email Lead Capture -->
-  </main>
+  
+<div class="faq-section" style="max-width:800px;margin:40px auto;padding:0 20px">
+  <h2 style="color:#ff8c00;margin-bottom:20px">Häufige Fragen</h2>
+  <details style="margin-bottom:16px;border:1px solid #2a2a2a;border-radius:8px;padding:16px 20px;background:#1a1a1a">
+    <summary style="cursor:pointer;font-weight:bold;color:#fff;font-size:1.05em">Kann ich als Anfänger in 12 Wochen einen Halbmarathon laufen?</summary>
+    <p style="color:#ccc;margin-top:12px;line-height:1.6">Ja, wenn du bereits 5 km problemlos laufen kannst. 12 Wochen reichen für einen sicheren Zieleinlauf — aber kein Sprint.</p>
+  </details>
+  <details style="margin-bottom:16px;border:1px solid #2a2a2a;border-radius:8px;padding:16px 20px;background:#1a1a1a">
+    <summary style="cursor:pointer;font-weight:bold;color:#fff;font-size:1.05em">Wie viele km Training pro Woche für einen Halbmarathon?</summary>
+    <p style="color:#ccc;margin-top:12px;line-height:1.6">In den ersten Wochen: 25-30 km/Woche. In der Aufbauphase: 40-50 km/Woche. Der Long Run am Wochenende ist die wichtigste Einheit.</p>
+  </details>
+  <details style="margin-bottom:16px;border:1px solid #2a2a2a;border-radius:8px;padding:16px 20px;background:#1a1a1a">
+    <summary style="cursor:pointer;font-weight:bold;color:#fff;font-size:1.05em">Wie schnell kann man einen Halbmarathon als Anfänger laufen?</summary>
+    <p style="color:#ccc;margin-top:12px;line-height:1.6">Ein realistisches Anfänger-Ziel: 2:15-2:30 Stunden (6:20-7:05 min/km). Wichtiger als Zeit ist: ankommen ohne Verletzung.</p>
+  </details>
+  <details style="margin-bottom:16px;border:1px solid #2a2a2a;border-radius:8px;padding:16px 20px;background:#1a1a1a">
+    <summary style="cursor:pointer;font-weight:bold;color:#fff;font-size:1.05em">Was essen vor einem Halbmarathon?</summary>
+    <p style="color:#ccc;margin-top:12px;line-height:1.6">Abend vorher: kohlenhydratreich (Pasta, Reis). Morgen: leicht (Banane, Toast). 2 Stunden vorher letzte Mahlzeit, dann nur Wasser und Gels beim Lauf.</p>
+  </details>
+</div>
+
+</main>
   <footer>
     <p>&copy; 2026 braunwieimmer &middot; <a href="/impressum">Impressum</a> &middot; <a href="/datenschutz">Datenschutz</a></p>
   </footer>
