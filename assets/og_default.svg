@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#0f0f0f"/>
+  <rect x="0" y="0" width="1200" height="6" fill="#5cff8c"/>
+  <text x="600" y="260" font-family="Arial,sans-serif" font-size="72" font-weight="bold"
+        fill="#5cff8c" text-anchor="middle">braunwieimmer</text>
+  <text x="600" y="340" font-family="Arial,sans-serif" font-size="36"
+        fill="#e8e8e8" text-anchor="middle">Laufen für Anfänger</text>
+  <text x="600" y="410" font-family="Arial,sans-serif" font-size="28"
+        fill="#888" text-anchor="middle">braunwieimmer.de/blog</text>
+  <circle cx="100" cy="315" r="40" fill="none" stroke="#5cff8c" stroke-width="3"/>
+  <circle cx="1100" cy="315" r="40" fill="none" stroke="#5cff8c" stroke-width="3"/>
+</svg>
